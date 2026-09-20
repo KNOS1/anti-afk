@@ -1,13 +1,13 @@
 {
-	"Name": "[aAFK] Anti AFK",
+	"Name": "Anti AFK",
 	"Description": "[@drachenfruchl]\n\nDisables idle kicking",
 	"LoadPriority": 69420,
 	"Version": "1.0.0",
 	"Scripts": [
 		{
 			"Path": "antiAFK.nut",
-			"RunOn": "CLIENT",
-			"UICallback": {
+			"RunOn": "CLIENT && MP",
+			"ClientCallback": {
 				"After": "antiAFK_Init"
 			}
 		}

@@ -1,7 +1,7 @@
 global function antiAFK_Init
 
 void function antiAFK_Init(){
-	dtool_waitForValidGamestate( 3, antiAFKLoop )
+	thread antiAFKLoop() // This should work everywhere including the lobby instead of only ingame
 }
 
 void function antiAFKLoop(){
@@ -17,6 +17,5 @@ void function antiAFKLoop(){
 			wait 0
 
 		self.ClientCommand( "resetidletimer" )
-		printt( "Reset idle timer" )
 	}
 }
