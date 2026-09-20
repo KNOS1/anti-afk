@@ -30,7 +30,7 @@ array<int> AudioDurations = [
 	23,
 	35,
 	27,
-	41,
+	106,
 	45,
 	35,
 	226,

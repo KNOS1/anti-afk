@@ -1,3 +1,3 @@
-# anti-afk
+# anti-afk, now with rainworld soundtrack
 Calls the `resetidletimer` client command every 60 seconds to prevent you from being disconnected from a game due to being AFK  
-No mod settings needed
+Mod Settings needed
