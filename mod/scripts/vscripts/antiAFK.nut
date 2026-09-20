@@ -60,7 +60,7 @@ void function AudioLoop(){
 			else AfkTime = 0
 
 		}
-		if (AfkTime >= 120 && !Isplaying)
+		if (AfkTime >= 60 && !Isplaying && (GetMapName() != "mp_lobby") || AfkTime >= 500 && !Isplaying)
 		{
 			int randomIndex = RandomInt(25)
 			self.ClientCommand("playvideo RainWorld" + randomIndex.tostring() + " 1 1")
