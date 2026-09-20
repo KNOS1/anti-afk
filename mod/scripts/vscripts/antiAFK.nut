@@ -1,7 +1,6 @@
 global function antiAFK_Init
 
 void function antiAFK_Init(){
-	//AddCallback_OnPlayerRespawned()
 	thread antiAFKLoop() // This should work everywhere including the lobby instead of only ingame
 	thread AudioLoop()
 }
@@ -52,16 +51,16 @@ void function AudioLoop(){
 		entity self = GetLocalClientPlayer()
 		if (IsValid(self))
 		{
-			vector LastPosition = self.GetOrigin()
+			vector LastPosition = self.GetVelocity()
             wait 1
-            if (LastPosition == self.GetOrigin())
+            if (LastPosition == self.GetVelocity())
 			{
 				AfkTime++
 			}
 			else AfkTime = 0
 
 		}
-		if (AfkTime >= 2 && !Isplaying)
+		if (AfkTime >= 120 && !Isplaying)
 		{
 			int randomIndex = RandomInt(25)
 			self.ClientCommand("playvideo RainWorld" + randomIndex.tostring() + " 1 1")
@@ -80,3 +79,4 @@ void function Duration (int i) {
 	    wait AudioDurations[i]
 		Isplaying = false
 }
+
